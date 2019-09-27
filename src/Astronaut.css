@@ -1,0 +1,145 @@
+.profile {
+    border: solid 1px rgba(0, 0, 0, 0.15);
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.15);
+    background: rgba(242, 246, 247, 0.75);
+    margin: 10px;
+}
+
+.profile img {
+    position: relative;
+    width: 100%;
+}
+
+.profile-pic {
+    border: solid 1px rgba(133, 148, 141, 0.15);
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.15);
+    border-style: inset;
+    border-radius: 50%;
+    max-width: 100%;
+    height: auto;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.profile-pic img {
+    width: 100%;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.15);
+}
+
+.profile-info {
+    text-align: center;
+    margin: 10px;
+    padding: 10px;
+}
+
+.profile-info p {
+  font-size: 16px;
+  line-height: 1.8;
+  font-family: 'Open Sans', sans-serif;
+  color: #2b2929;
+}
+
+#nameSurname {
+  text-transform: uppercase;
+  font-size: 20px;
+}
+
+/*---------profile in EDIT MODE----------------*/
+
+.profile-info-edit-mode {
+  margin: 10px;
+  padding: 10px;
+}
+
+.profile-info-edit-mode label {
+    font-size: 12px;
+    line-height: 1.8;
+    font-family: 'Open Sans', sans-serif;
+    color: #2b2929;
+    font-weight: bold;
+}
+
+.profile-info-edit-mode input[type=text] {
+  width: 100%;
+  padding: 12px;
+  box-sizing: border-box;
+  resize: vertical;
+  margin: 5px 0 5px 0;
+}
+
+.profile-info-edit-mode input[type=text]:focus {
+  background-color: #ddd;
+  outline: none;
+}
+
+/*-----------BUTTONS EDIT and REMOVE--------------*/
+.container-btn-profile {
+    text-align: center;
+    height: 33%;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: flex-start;
+    margin: 10px;
+  }
+
+.btn-profile {
+    position: relative;
+    width: 35%;
+    height: 46px;
+    line-height: 46px;
+    transition: all 0.3s;
+    margin: 10px;
+    background: rgba(163, 141, 112, 0.55);
+}
+
+.btn-profile span {
+    transition: all 0.3s;
+    transform: scale(1, 1);
+    font-family: 'Roboto', sans-serif;
+    font-weight: bold;
+  }
+
+.btn-profile::before, .btn-profile::after {
+  content: '';
+  position: absolute;
+  transition: all 0.3s;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 1;
+}
+
+.btn-profile::before {
+  opacity: 0;
+  transform: scale(1, 0.1);
+  z-index:-1;
+}
+
+.btn-profile:hover::before {
+  opacity: 1;
+  transform: scale(1, 1);
+}
+
+.btn-profile::after {
+  transition: all 0.3s;
+  border: solid 1px rgba(133, 148, 141, 0.15);
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.15);
+  background: rgba(242, 246, 247, 0.15);
+}
+
+.btn-profile:hover::after {
+  transform: scale(1, .1);
+  opacity: 0;
+  background: rgba(242, 246, 247, 0.95);
+  
+}
+
+.btn-profile:hover span {
+  color: white;
+  font-weight: 900;
+}
+
+

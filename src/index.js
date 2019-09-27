@@ -1,12 +1,37 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import './index.css';
-import App from './App';
-import * as serviceWorker from './serviceWorker';
+import Gallery from './Gallery';
+import './style.css';
 
-ReactDOM.render(<App />, document.getElementById('root'));
+const testData = [
+    {
+        id: 1,
+        name: 'Džu',
+        surname: 'Heroin',
+        dateOfBirth: '28 Sep 1970',
+        isBeingEdited: false,
+        superpower: 'Teleporting'
+    },
+    {
+        id: 2, 
+        name: 'Riš', 
+        surname: 'Hero', 
+        dateOfBirth: '16 Oct 1977',
+        isBeingEdited: false,
+        superpower: 'Laser Eyes'
+    },
+    {
+        id: 3,
+        name: 'Teodora', 
+        surname: 'Brčouš', 
+        dateOfBirth: '01 Jan 2000',
+        isBeingEdited: false,
+        superpower: 'Crazy Hair'
+    },
+]
 
-// If you want your app to work offline and load faster, you can change
-// unregister() to register() below. Note this comes with some pitfalls.
-// Learn more about service workers: https://bit.ly/CRA-PWA
-serviceWorker.unregister();
+// ========================================
+ReactDOM.render(
+    <Gallery testData={testData}/>,
+    document.getElementById('root')
+);

@@ -1,0 +1,58 @@
+/* --------------Style the FORM---------- */
+.form-popup {
+    position: fixed;
+    bottom: 0;
+    right: 15px;
+    z-index: 9;
+    border: solid 1px rgba(0, 0, 0, 0.15);
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.15);
+    background-color: #f2f2f2;
+}
+
+.container-form {
+    padding: 20px;
+    max-width: 300px;
+}
+
+.container-form h3 {
+    text-transform: uppercase;
+    font-size: 20px;
+    line-height: 1.8;
+    font-family: 'Open Sans', sans-serif;
+    color: #2b2929;
+    margin: 0 0 1em 0;
+}
+
+.container-form input[type=text] {
+    width: 100%;
+    padding: 12px;
+    box-sizing: border-box;
+    resize: vertical;
+    margin: 5px 0 5px 0;
+}
+
+.container-form input[type=text]:focus {
+    background-color: #ddd;
+    outline: none;
+}
+
+label {
+    font-weight: bold;
+    font-size: 12px;
+}
+
+.btn-submit {
+    background-color:rgb(133, 148, 141);
+    color: white;
+    padding: 12px 20px;
+    margin-top: 6px;
+    margin-bottom: 10px;
+    border: none;
+    cursor: pointer;
+    float: right;
+    width: 100%;
+}
+
+#btn-close {
+    background-color:rgb(149, 140, 173);
+}

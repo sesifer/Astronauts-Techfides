@@ -1,0 +1,48 @@
+/*-------------MOBILE FIRST-------------*/
+.gallery {
+    width: 100%;
+}
+
+.header {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  height: auto;
+  margin: 0.5em;
+  padding: 0.5em;
+}
+
+.title {
+  position: relative;
+  font-size: 42px;
+  font-family: 'Roboto', sans-serif;
+  color: #2b2929;
+  width: 65%;
+  text-align: center;
+  font-weight: 800;
+  margin: 0.3em;
+}
+
+.subtitle {
+  position: relative;
+  font-size: 30px;
+  font-family: 'Roboto', sans-serif;
+  color: #2b2929;
+  width: 65%;
+  text-align: center;
+  margin: 0.3em;
+  padding: 0;
+}
+
+.footer{
+    position: absolute;
+    bottom: -10px;
+    left: 0;
+    color: #a6a6a6;
+    font-size: 10px;
+    margin: 20px;
+}
+
+.footer a {
+    color: #a6a6a6;
+}

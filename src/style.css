@@ -1,0 +1,47 @@
+
+html { box-sizing: border-box; }
+*, ::after, ::before { box-sizing: inherit; }
+
+/* COLORS
+#85948D rgb(133, 148, 141)  -- greenish
+#A38D70 rgb(163, 141, 112) -- brown
+#958CAD rgb(149, 140, 173) -- lila
+*/
+
+body {
+  font-family: 'Libre Baskerville', serif;
+  width: 100%;
+  height: 100%;
+  margin: 0;
+}
+
+h1,h2,h3,h4,h5,h6 {
+  font-weight: normal;
+  font-style: normal;
+}
+
+p {
+  margin:0;
+}
+      
+.background {
+  position: relative;
+  background-color: #f0ede6;
+  background-image: url("../src/assets/images/astronaut.jpg");
+  background-repeat: no-repeat;
+  background-position: center center;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+  min-height: 800px;
+  overflow: auto;
+}
+
+.hidden {
+  display:none;
+}
+
+.show {
+  display:block;
+}
