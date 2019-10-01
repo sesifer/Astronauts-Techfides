@@ -16,7 +16,7 @@ class ListOfAstronauts extends React.Component {
         };        
     }
 
-    addItem = (event, name, surname, dateOfBirth, superpower) => {
+    addAstronaut = (event, name, surname, dateOfBirth, superpower) => {
         event.preventDefault();
         this.setState({ showFormAddNewAstronaut: 'hidden' });
         const astronautsInState = this.state.listOfAstronauts;
@@ -40,7 +40,7 @@ class ListOfAstronauts extends React.Component {
        })
     };
 
-    toggleItemEditing = index => {
+    toggleItemEdit = index => {
         this.setState({
             listOfAstronauts: this.state.listOfAstronauts.map((astronaut, astronautIndex) => {
                 if (astronautIndex === index) {
@@ -54,7 +54,7 @@ class ListOfAstronauts extends React.Component {
         });
     };
 
-    handleItemUpdate = (event, index) => {
+    handldAstronautUpdate = (event, index) => {
         const target = event.target;
         const value  = target.value;
         const name = target.name;
@@ -71,7 +71,7 @@ class ListOfAstronauts extends React.Component {
         });
     };
 
-    handleRemoval = index => {
+    removeAstronaut = index => {
         this.setState({
             listOfAstronauts: [
                 ...this.state.listOfAstronauts.slice(0, index),
@@ -103,8 +103,7 @@ class ListOfAstronauts extends React.Component {
         return(
             <React.Fragment>
                 <AddAstronaut
-                    onChange={this.handleChange}
-                    onSubmit={this.addItem}
+                    onSubmit={this.addAstronaut}
                     isFormDisplayed={this.state.isFormDisplayed}
                     onFormClosure={this.hideFormAddNewAstronaut}
                 />
@@ -120,9 +119,9 @@ class ListOfAstronauts extends React.Component {
                                    dateOfBirth={astronaut.dateOfBirth}
                                    superpower={astronaut.superpower}
                                    isBeingEdited={astronaut.isBeingEdited}
-                                   toggleEditing = { () => this.toggleItemEditing(index) }
-                                   onChange={this.handleItemUpdate}
-                                   onDelete={ () => this.handleRemoval(index) }
+                                   toggleEditing = { () => this.toggleItemEdit(index) }
+                                   onChange={this.handldAstronautUpdate}
+                                   deleteAstronaut={ () => this.removeAstronaut(index) }
                                />)
                     }
                 </div>

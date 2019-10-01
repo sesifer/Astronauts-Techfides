@@ -34,7 +34,7 @@ class AddAstronaut extends React.Component {
     handleSubmit = (event) => {
         event.preventDefault();
         const { name, surname, dateOfBirth, superpower } = this.state;
-        this.props.onSubmit( event, name, surname, dateOfBirth, superpower);
+        this.props.onSubmit(event, name, surname, dateOfBirth, superpower);
         this.clearForm();
     }
 
@@ -60,7 +60,6 @@ class AddAstronaut extends React.Component {
                         onChange={this.handleChange}
                         required
                     />   
-                
                     <label htmlFor="surname">Surname</label>
                     <input
                         type="text"
@@ -70,7 +69,6 @@ class AddAstronaut extends React.Component {
                         onChange={this.handleChange}
                         required
                     />
-                
                     <label htmlFor="dateOfBirth">Date of Birth</label>
                     <input
                         type="date"
@@ -80,7 +78,6 @@ class AddAstronaut extends React.Component {
                         onChange={this.handleChange}
                         required
                     />
-                
                     <label htmlFor="superpower">Superpower</label>
                     <input
                         type="text"
@@ -90,7 +87,6 @@ class AddAstronaut extends React.Component {
                         onChange={this.handleChange}
                         required
                     />
-
                     <button type="submit" className="btn-submit">Submit</button>
                     <button type="button" className="btn-submit" id="btn-close" onClick={this.onFormClosure}>Close</button> 
                 </form>

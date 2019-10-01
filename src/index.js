@@ -8,7 +8,7 @@ const testData = [
         id: 1,
         name: 'Džu',
         surname: 'Heroin',
-        dateOfBirth: '28 Sep 1970',
+        dateOfBirth: '1970-10-28',
         isBeingEdited: false,
         superpower: 'Teleporting'
     },
@@ -16,7 +16,7 @@ const testData = [
         id: 2, 
         name: 'Riš', 
         surname: 'Hero', 
-        dateOfBirth: '16 Oct 1977',
+        dateOfBirth: '1977-10-17',
         isBeingEdited: false,
         superpower: 'Laser Eyes'
     },
@@ -24,7 +24,7 @@ const testData = [
         id: 3,
         name: 'Teodora', 
         surname: 'Brčouš', 
-        dateOfBirth: '01 Jan 2000',
+        dateOfBirth: '2000-01-01',
         isBeingEdited: false,
         superpower: 'Crazy Hair'
     },
