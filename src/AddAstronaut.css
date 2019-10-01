@@ -23,7 +23,8 @@
     margin: 0 0 1em 0;
 }
 
-.container-form input[type=text] {
+.container-form input[type=text],
+.container-form input[type=date] {
     width: 100%;
     padding: 12px;
     box-sizing: border-box;
@@ -31,7 +32,8 @@
     margin: 5px 0 5px 0;
 }
 
-.container-form input[type=text]:focus {
+.container-form input[type=text]:focus,
+.container-form input[type=date]:focus {
     background-color: #ddd;
     outline: none;
 }
@@ -55,4 +57,15 @@ label {
 
 #btn-close {
     background-color:rgb(149, 140, 173);
+}
+
+.form-input {
+    margin: 0 auto;
+    height: 500px;
+    width: 500px;
+}
+.form-inside-input {
+    height: 500px;
+    width: 200px;
+    margin: 0 auto;
 }

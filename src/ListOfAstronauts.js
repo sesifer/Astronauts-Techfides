@@ -1,7 +1,6 @@
 import React from 'react';
 import AddAstronaut from './AddAstronaut';
 import Astronaut from './Astronaut';
-
 import './style.css';
 import './ListOfAstronauts.css';
 
@@ -10,30 +9,16 @@ class ListOfAstronauts extends React.Component {
         super(props);
 
         this.state = {
-            name: '',
-            surname: '',
-            dateOfBirth: '',
-            superpower: '',
             isBeingEdited: false,
             listOfAstronauts: this.props.listOfAstronauts,
-            isFormDisplayed: false
-        };
-    } 
-
-    handleChange = event => {
-        const target = event.target;
-        const value = target.value;
-        const name = target.name;
-        
-        this.setState({
-            [ name ]: value
-        });
+            isFormDisplayed: false,
+            isRemoveAllBtnDisplayed: true
+        };        
     }
 
-    addItem = event => {
+    addItem = (event, name, surname, dateOfBirth, superpower) => {
         event.preventDefault();
         this.setState({ showFormAddNewAstronaut: 'hidden' });
-        const { name, surname, dateOfBirth, superpower } = this.state;
         const astronautsInState = this.state.listOfAstronauts;
         const astronautsArrayLenght = this.state.listOfAstronauts.length;
         const id = astronautsArrayLenght ? (astronautsInState[astronautsArrayLenght - 1].id + 1) : 1;
@@ -48,24 +33,11 @@ class ListOfAstronauts extends React.Component {
                     superpower
                 })
             ],
-            name: '',
-            surname: '',
-            dateOfBirth: '',
-            superpower: '',
+            allFieldsValid: false,
             isBeingEdited: false,
-            isFormDisplayed: false
+            isFormDisplayed: false,
+            isRemoveAllBtnDisplayed: true
        })
-
-       return(
-        <AddAstronaut 
-                name={name}
-                surname={surname}
-                dateOfBirth={dateOfBirth}
-                superpower={superpower}
-                onChange={this.handleChange}
-                onSubmit={this.addItem}
-                />
-        ); 
     };
 
     toggleItemEditing = index => {
@@ -106,31 +78,17 @@ class ListOfAstronauts extends React.Component {
                 ...this.state.listOfAstronauts.slice(index+1) 
             ]
         });
+        if (this.state.listOfAstronauts.length === 1) {
+            this.setState({isRemoveAllBtnDisplayed: false});
+        }
     };
 
     removeAllListedAstronauts = () => {
-        const { name, surname, dateOfBirth, superpower } = this.state;
-
         this.setState({
             listOfAstronauts: [],
-            name: '',
-            surname: '',
-            dateOfBirth: '',
-            superpower: '',
-            isBeingEdited: false
+            isBeingEdited: false,
+            isRemoveAllBtnDisplayed: false
         });
-
-        return(
-            <AddAstronaut 
-                    name={name}
-                    surname={surname}
-                    dateOfBirth={dateOfBirth}
-                    superpower={superpower}
-                    onChange={this.handleChange}
-                    onSubmit={this.addItem}
-                    onClick={this.hideFormAddNewAstronaut}
-                    />
-        ); 
     };
 
     showFormAddNewAstronaut = () => {
@@ -141,20 +99,14 @@ class ListOfAstronauts extends React.Component {
         this.setState({isFormDisplayed: false});
     }
 
-    render() {
-        const { name, surname, dateOfBirth, superpower, isFormDisplayed } = this.state;
-        
+    render() {        
         return(
             <React.Fragment>
-                <AddAstronaut 
-                    name={name}
-                    surname={surname}
-                    dateOfBirth={dateOfBirth}
-                    superpower={superpower}
+                <AddAstronaut
                     onChange={this.handleChange}
                     onSubmit={this.addItem}
-                    isFormDisplayed={isFormDisplayed}
-                    onClick={this.hideFormAddNewAstronaut}
+                    isFormDisplayed={this.state.isFormDisplayed}
+                    onFormClosure={this.hideFormAddNewAstronaut}
                 />
                 <div className="listOfAstronauts">
                     {
@@ -182,7 +134,7 @@ class ListOfAstronauts extends React.Component {
                         <span>Add new</span>
                     </div>
                     <div
-                        className="btn-remove-all"
+                        className={`btn-remove-all ${this.state.isRemoveAllBtnDisplayed ? 'show' : 'hidden'}`}
                         type="button"
                         onClick={ () => this.removeAllListedAstronauts() }>
                         <span>Remove all</span>
@@ -191,6 +143,6 @@ class ListOfAstronauts extends React.Component {
             </React.Fragment>
         )
     }
-}        
+} 
 
 export default ListOfAstronauts;

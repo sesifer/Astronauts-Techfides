@@ -29,7 +29,7 @@ const Astronaut = ({name, surname, dateOfBirth, superpower, isBeingEdited, toggl
             
                 <label htmlFor="dateOfBirth">Date of Birth</label>
                 <input
-                    type="text"
+                    type="date"
                     name="dateOfBirth"
                     placeholder="Date of Birth"
                     value={dateOfBirth}
