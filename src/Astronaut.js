@@ -11,7 +11,7 @@ class Astronaut extends React.Component {
     render() {
         const { name, surname, dateOfBirth, superpower, isBeingEdited, toggleEditing, onChange, deleteAstronaut, index } = this.props;
         return(
-            <div className="profile">
+            <div className={`profile ${this.props.isBeingEdited ? 'profile-edit-mode' : ''}`}>
                 <img className="profile-pic" src={profile_pic} alt="Avatar"/>
                 {isBeingEdited ? 
                 /*-------------------EDIT mode---------------------*/

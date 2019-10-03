@@ -1,8 +1,7 @@
-
 html { box-sizing: border-box; }
 *, ::after, ::before { box-sizing: inherit; }
 
-/* COLORS
+/* used COLORS
 #85948D rgb(133, 148, 141)  -- greenish
 #A38D70 rgb(163, 141, 112) -- brown
 #958CAD rgb(149, 140, 173) -- lila
@@ -34,8 +33,10 @@ p {
   -moz-background-size: cover;
   -o-background-size: cover;
   background-size: cover;
-  min-height: 800px;
-  overflow: auto;
+  overflow: hidden;
+  background-size: cover;
+  width: 100%;
+  min-height: 100vh;
 }
 
 .hidden {

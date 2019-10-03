@@ -6,16 +6,16 @@ import './style.css';
 const testData = [
     {
         id: 1,
-        name: 'Džu',
-        surname: 'Heroin',
+        name: 'Amanda',
+        surname: 'White',
         dateOfBirth: '1970-10-28',
         isBeingEdited: false,
         superpower: 'Teleporting'
     },
     {
         id: 2, 
-        name: 'Riš', 
-        surname: 'Hero', 
+        name: 'Richard', 
+        surname: 'Astronaut', 
         dateOfBirth: '1977-10-17',
         isBeingEdited: false,
         superpower: 'Laser Eyes'
@@ -28,6 +28,54 @@ const testData = [
         isBeingEdited: false,
         superpower: 'Crazy Hair'
     },
+    {
+        id: 3,
+        name: 'Adam', 
+        surname: 'Smith', 
+        dateOfBirth: '1950-01-01',
+        isBeingEdited: false,
+        superpower: 'Invisibility'
+    },
+    {
+        id: 3,
+        name: 'Beth', 
+        surname: 'Jones', 
+        dateOfBirth: '1951-01-01',
+        isBeingEdited: false,
+        superpower: 'Fire'
+    },
+    {
+        id: 3,
+        name: 'Will', 
+        surname: 'Wilson', 
+        dateOfBirth: '1943-01-01',
+        isBeingEdited: false,
+        superpower: 'Immportality'
+    },
+    {
+        id: 3,
+        name: 'Zena', 
+        surname: 'Zolt', 
+        dateOfBirth: '1955-01-01',
+        isBeingEdited: false,
+        superpower: 'Telepathy'
+    },
+    {
+        id: 3,
+        name: 'Peter', 
+        surname: 'Path', 
+        dateOfBirth: '1986-01-01',
+        isBeingEdited: false,
+        superpower: 'Strength'
+    },
+    {
+        id: 3,
+        name: 'Ivy', 
+        surname: 'Terry', 
+        dateOfBirth: '1960-01-01',
+        isBeingEdited: false,
+        superpower: 'X-ray vision'
+    }
 ]
 
 // ========================================
