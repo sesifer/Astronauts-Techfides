@@ -6,7 +6,20 @@ class Astronaut extends React.Component {
     parseDateInput = (date) => {
         const [year, month, day] = date.split('-');
         return `${day}-${month}-${year}`;
-    }
+    };
+
+    /* get the current date for the maximum for the date input below */
+    componentDidMount = () => {
+        var date = new Date().getDate(); 
+        var month = new Date().getMonth() + 1;
+        var year = new Date().getFullYear();
+        var myDateString;
+            
+        myDateString = year + '-'
+             + ('0' + month).slice(-2) + '-'
+             + ('0' + date).slice(-2);
+        return(myDateString);
+    };
     
     render() {
         const { name, surname, dateOfBirth, superpower, isBeingEdited, toggleEditing, onChange, deleteAstronaut, index } = this.props;
@@ -37,6 +50,8 @@ class Astronaut extends React.Component {
                         <label htmlFor="dateOfBirth">Date of Birth</label>
                         <input
                             type="date"
+                            min="1900-01-01"
+                            max={this.componentDidMount()}
                             name="dateOfBirth"
                             placeholder="Date of Birth"
                             value={dateOfBirth}
